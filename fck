@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Am I a Good Person?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        margin: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    #yesBtn {
+        background-color: #4CAF50;
+        color: white;
+    }
+    #noBtn {
+        background-color: #f44336;
+        color: white;
+        position: absolute;
+    }
+    #message {
+        margin-top: 30px;
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>Am I a good person?</h1>
+<div>
+    <button id="yesBtn">Yes 👍</button>
+    <button id="noBtn">No 😏</button>
+</div>
+<p id="message"></p>
+
+<script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
+
+    yesBtn.addEventListener("click", () => {
+        message.textContent = "Haan haan bhosdike pta h meko... batane ka koi jrurat nhi h...";
+    });
+
+    noBtn.addEventListener("click", () => {
+        const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+        const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+        message.textContent = "behen ke lund aukaat me";
+    });
+</script>
+
+</body>
+</html>
